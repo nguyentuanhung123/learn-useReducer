@@ -7,6 +7,12 @@ const initialState = {
 
 const counterReducer = (state, action) => {
   switch(action.type) {
+    case "INCREMENT_BY_TEN":
+      // return state + 1;
+      return {
+        count: state.count + 10,
+        numOperation: state.numOperation + 1
+      }
     case "INCREMENT":
       // return state + 1;
       return {
@@ -37,6 +43,9 @@ const App = () => {
       </button>
       <button onClick={() => dispatch({ type: "DECREMENT" })}>
         -
+      </button>
+      <button onClick={() => dispatch({ type: "INCREMENT_BY_TEN" })}>
+        + 10
       </button>
     </div>
   )
